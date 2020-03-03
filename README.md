@@ -20,4 +20,5 @@ Current sample is as followis,
 ## Reference
 - VMC API Docs
 com.vmware.nsx_vmc_app.infra.direct_connect_client.Vifs
+
 https://vmware.github.io/vsphere-automation-sdk-python/nsx/nsx_vmc_aws_integration/com.vmware.nsx_vmc_app.infra.html
