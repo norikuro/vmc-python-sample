@@ -31,9 +31,9 @@ def main():
   sddc_id = "VMC SDDC ID"
 
   nsx_app_client = get_nsx_app_client(
-      token, 
-      org_id, 
-      sddc_id
+    token, 
+    org_id, 
+    sddc_id
   )
 
   attach_vifs(
