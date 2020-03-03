@@ -31,7 +31,7 @@ def list_firewall_rules(nsx_client):
   print(json.dumps(rules_list, indent=2))
   
   
-def get_rules(rule:
+def get_rules(rule):
   return {"create_user": rule.get_field("create_user"),
           "display_name": rule.get_field("display_name"),
           "logged": rule.get_field("logged"),
