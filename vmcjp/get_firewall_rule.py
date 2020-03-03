@@ -4,8 +4,8 @@ import time
 import requests
 import atexit
 
-from datetime import datetime
-from pytz import timezone
+#from datetime import datetime
+#from pytz import timezone
 from com.vmware.nsx_policy_client_for_vmc import create_nsx_policy_client_for_vmc
 from com.vmware.nsx_vmc_app_client_for_vmc import create_nsx_vmc_app_client_for_vmc
 
