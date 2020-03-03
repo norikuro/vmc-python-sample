@@ -68,6 +68,10 @@ def get_rules(rule, gateway_type, security_groups):
           "source_group_names": sg_names
          }
   
+def replace_strings_in_list(ls, st):
+#  return [l.replace(st, "") for l in ls]
+  return [l.translate(None, st) for l in ls]
+
 def compare_list_and_dict(ls, dic):
   key_list = dic.keys()
   dup_list = set(key_list) & set(ls)
