@@ -17,9 +17,9 @@ def get_nsx_app_client(token, org_id, sddc_id):
   return nsx_app_client
 
 def main():
-#  token = "VMC_Refresh_Token_xxxxxxx"
-#  org_id = "VMC Org ID"
-#  sddc_id = "VMC SDDC ID"
+  token = "VMC_Refresh_Token_xxxxxxx"
+  org_id = "VMC Org ID"
+  sddc_id = "VMC SDDC ID"
 
   nsx_app_client = get_nsx_app_client(
       token, 
