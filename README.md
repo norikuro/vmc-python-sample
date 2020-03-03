@@ -4,6 +4,7 @@ This is sample of how to implement python scripts to manage VMware Cloud on AWS.
 Current sample is as followis,
 - create SDDC on VMC
 - add hosts to SDDC
+- get Edge firewall rules
 - attach AWS Direct Connect Private VIFs to SDDC
 ## How to use
 ### clone this git to your desktop
