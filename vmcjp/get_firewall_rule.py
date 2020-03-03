@@ -46,10 +46,12 @@ def get_security_group_ids_and_names(gateway_type, nsx_client):
 def get_rules(rule, gateway_type, security_groups):
   sn = rule.get_field("sequence_number")
   source_groups = rule.get_field("source_groups")
-  sg = replace_strings_in_list(source_groups, "/infra/domains/" + gateway_type + "/groups/")
+#  sg = replace_strings_in_list(source_groups, "/infra/domains/" + gateway_type + "/groups/")
+  sg = [l.translate(None, "/infra/domains/" + gateway_type + "/groups/") for l in source_groups]
   sg_names = compare_list_and_dict(sg, security_groups)
   dest_groups = rule.get_field("destination_groups")
-  dg = replace_strings_in_list(dest_groups, "/infra/domains/" + gateway_type + "/groups/")
+#  dg = replace_strings_in_list(dest_groups, "/infra/domains/" + gateway_type + "/groups/")
+  dg = [l.translate(None, "/infra/domains/" + gateway_type + "/groups/") for l in dest_groups]
   dg_names = compare_list_and_dict(dg, security_groups)
   
   return {"create_user": rule.get_field("create_user"),
