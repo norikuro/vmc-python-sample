@@ -3,9 +3,7 @@
 import requests
 import atexit
 
-#from com.vmware.nsx_policy_client_for_vmc import create_nsx_policy_client_for_vmc
 from com.vmware.nsx_vmc_app_client_for_vmc import create_nsx_vmc_app_client_for_vmc
-
 from vmcjp.utils.metadata import get_members
 
 def get_nsx_app_client(token, org_id, sddc_id):
