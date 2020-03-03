@@ -15,5 +15,5 @@ Current sample is as followis,
 ```
 ### Run scripts
 ```cmd
-# python create_sddc.py
+# python vmcjp/create_sddc.py
 ```
