@@ -26,11 +26,10 @@ def get_nsx_policy_client(token, org_id, sddc_id):
   atexit.register(session.close)
   return nsx_policy_client
 
-def list_firewall_rules():
-  network_config = [
-      get_firewall_rules("mgw", self.nsx_policy_client),
-      get_firewall_rules("cgw", self.nsx_policy_client)
-  ]
+def list_firewall_rules(nsx_client):
+  policies = nsx_client.infra.domains.GatewayPolicies.get("cgw", "default")
+  rules = policies.get_field("rules")
+  print(rules)
     
 def main():
   token = "VMC_Refresh_Token_xxxxxxx"
@@ -42,7 +41,7 @@ def main():
       org_id, 
       sddc_id
   )
-  list_firewall_rules()
+  list_firewall_rules(nsx_policy_client)
 
 if __name__ == '__main__':
   main()
