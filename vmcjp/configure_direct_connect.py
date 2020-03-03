@@ -31,7 +31,11 @@ def main():
   
   #we will attach all available VIFs to SDDC.
   for vif in vifs:
-    vifs.create(vif.id, "ATTACH")
+    try:
+      vifs.create(vif.id, "ATTACH")
+      print("VIF id:{} is attached to this SDDC".format(vif.id))
+    except Exception as e:
+      print("Failed to attach VIF, {}".format(e.message))
     #please see following api doc in detail
     #https://vmware.github.io/vsphere-automation-sdk-python/nsx/nsx_vmc_aws_integration/com.vmware.nsx_vmc_app.infra.html
 
