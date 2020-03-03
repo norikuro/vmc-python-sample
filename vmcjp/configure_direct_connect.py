@@ -25,6 +25,11 @@ def attach_vifs(vifs):
     except Exception as e:
       print("Failed to attach VIF, {}".format(e.message))
 
+def check_attached_vif_status(vif):
+  while True:
+    aaa
+    
+
 def main():
   token = "VMC_Refresh_Token_xxxxxxx"
   org_id = "VMC Org ID"
@@ -35,10 +40,11 @@ def main():
     org_id, 
     sddc_id
   )
-
-  attach_vifs(
-    nsx_app_client.infra.direct_connect.Vifs.list().results
-  )
+  
+  vifs = nsx_app_client.infra.direct_connect.Vifs.list().results
+  attach_vifs(vifs)
+  check_attached_vif_status(vifs)
+  check_attached_vif_bgp_status(vifs)
   
 if __name__ == '__main__':
   main()
