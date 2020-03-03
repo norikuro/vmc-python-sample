@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 
-import time
-import requests
+#import time
+#import requests
 import atexit
+import json
 
 #from datetime import datetime
 #from pytz import timezone
@@ -37,7 +38,7 @@ def list_firewall_rules(nsx_client):
     for rule in rules
   ]
   
-  print(rules_list)
+  print(json.dumps(rules_list, indent=2))
   
 def get_security_group_ids_and_names(gateway_type, nsx_client):
   security_groups = nsx_client.infra.domains.Groups.list(gateway_type).results
