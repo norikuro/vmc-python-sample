@@ -6,9 +6,14 @@ Current sample is as followis,
 ## How to use
 ### clone this git to your desktop
 ```cmd
-# export PYTHONPATH=${PWD}:$PYTHONPATH
+# git clone https://github.com/norikuro/vmc-sample
 ```
 ### Set PYTHONPATH to be able to import librarys
 ```cmd
+# cd vmc-sample
 # export PYTHONPATH=${PWD}:$PYTHONPATH
+```
+### Run scripts
+```cmd
+# python create_sddc.py
 ```
