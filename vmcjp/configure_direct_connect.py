@@ -31,13 +31,13 @@ def main():
   )
 
   print(get_members(nsx_app_client.infra.direct_connect.Vifs.list()))
-  print(nsx_app_client.infra.direct_connect.Vifs.list().to_json())
+#  print(nsx_app_client.infra.direct_connect.Vifs.list().to_json())
 #  print(nsx_app_client.infra.direct_connect.Vifs.list().get_field())
 
 #  count = nsx_app_client.infra.direct_connect.Vifs.list().result_count
   vifs = nsx_app_client.infra.direct_connect.Vifs.list().results
-  for vif in vifs:
-    print("vif is available!!")
+  for vif in vifs: #we will attach all available VIFs to SDDC.
+    vifs.create(vif.id, "ATTACH")
 
 if __name__ == '__main__':
   main()
