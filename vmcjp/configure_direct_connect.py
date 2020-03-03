@@ -16,6 +16,15 @@ def get_nsx_app_client(token, org_id, sddc_id):
   atexit.register(session.close)
   return nsx_app_client
 
+def attach_vifs(vifs):
+  #we will attach all available VIFs to SDDC.
+  for vif in vifs:
+    try:
+      vifs.create(vif.id, "ATTACH")
+      print("VIF id:{} is attached to this SDDC".format(vif.id))
+    except Exception as e:
+      print("Failed to attach VIF, {}".format(e.message))
+
 def main():
   token = "VMC_Refresh_Token_xxxxxxx"
   org_id = "VMC Org ID"
@@ -27,15 +36,9 @@ def main():
       sddc_id
   )
 
-  vifs = nsx_app_client.infra.direct_connect.Vifs.list().results
+  attach_vifs(
+    nsx_app_client.infra.direct_connect.Vifs.list().results
+  )
   
-  #we will attach all available VIFs to SDDC.
-  for vif in vifs:
-    try:
-      vifs.create(vif.id, "ATTACH")
-      print("VIF id:{} is attached to this SDDC".format(vif.id))
-    except Exception as e:
-      print("Failed to attach VIF, {}".format(e.message))
-
 if __name__ == '__main__':
   main()
