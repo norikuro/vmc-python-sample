@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 #import time
-#import requests
+import requests
 import atexit
 import json
 
