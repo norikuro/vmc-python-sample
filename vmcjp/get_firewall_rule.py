@@ -27,9 +27,9 @@ def get_nsx_policy_client(token, org_id, sddc_id):
   return nsx_policy_client
 
 def list_firewall_rules(nsx_client):
-  geteway_type = "cgw" #or "mgw"
+  gateway_type = "cgw" #or "mgw"
   security_groups = get_security_group_ids_and_names(gateway_type, nsx_client)
-  policies = nsx_client.infra.domains.GatewayPolicies.get(geteway_type, "default")
+  policies = nsx_client.infra.domains.GatewayPolicies.get(gateway_type, "default")
   rules = policies.get_field("rules")
   
   rules_list = [
