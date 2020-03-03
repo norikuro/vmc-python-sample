@@ -9,11 +9,11 @@ import atexit
 from com.vmware.nsx_policy_client_for_vmc import create_nsx_policy_client_for_vmc
 from com.vmware.nsx_vmc_app_client_for_vmc import create_nsx_vmc_app_client_for_vmc
 
-from vmcjp.config import Config
+#from vmcjp.config import Config
 from vmcjp.utils.metadata import get_members
-from vmcjp.network.security_groups import get_security_groups
-from vmcjp.network.firewall_rules import get_firewall_rules
-from vmcjp.network.vpns import get_l3vpns
+#from vmcjp.network.security_groups import get_security_groups
+#from vmcjp.network.firewall_rules import get_firewall_rules
+#from vmcjp.network.vpns import get_l3vpns
 
 def get_nsx_policy_client(token, org_id, sddc_id):
   session = requests.Session()
