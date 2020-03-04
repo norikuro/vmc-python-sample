@@ -28,11 +28,12 @@ def attach_vifs(vifs):
 
 def check_vif_status(vifs):
   #wait 3 minuites until attached VIF status will be available.
-  wait_time = 3 * 60 
-  start = time.time()
-  elapsed_time = 0
+  wait_time = 3 * 60
   
   for vif in vifs:
+    start = time.time()
+    elapsed_time = 0
+    
     while elapsed_time < wait_time:
       vif_id = vif.id
       vif_state = vif.state
