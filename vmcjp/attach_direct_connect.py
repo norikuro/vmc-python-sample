@@ -50,12 +50,13 @@ def check_vif_status(vifs):
           print("Please see VMC console if VIF is up later.")
 
 def check_bgp_status(vifs):
-  #wait 10 minuites until attached VIF BGP status will be up.
-  wait_time = 10 * 60   
-  start = time.time()
-  elapsed_time = 0
+  #wait  minuites until attached VIF BGP status will be up.
+  wait_time = 3 * 60
   
   for vif in vifs:
+    start = time.time()
+    elapsed_time = 0
+    
     while elapsed_time < wait_time:
       vif_id = vif.id
       vif_bgp_state = vif.bgp_status
