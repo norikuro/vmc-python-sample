@@ -91,7 +91,7 @@ def main():
     check_attached_vif_status(vifs)
     check_attached_vif_bgp_status(vifs)
   else:
-    Print("There is no VIF to attach to this SDDC!")
+    print("There is no VIF to attach to this SDDC!")
   
 if __name__ == '__main__':
   main()
