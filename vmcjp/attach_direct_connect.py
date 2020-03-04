@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import time
 import requests
 import atexit
 
@@ -26,8 +27,16 @@ def attach_vifs(vifs):
       print("Failed to attach VIF, {}".format(e.message))
 
 def check_attached_vif_status(vif):
-  while True:
-    aaa
+  #wait 3 minuites until attached VIF status will be available.
+  wait_time = 3 * 60 
+  
+  start = time.time()
+    while True:
+    elapsed_time = time.time() - start
+    if elapsed_time > wait_time:
+      return
+    else:
+      checkaaa
     
 
 def main():
