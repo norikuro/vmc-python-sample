@@ -38,7 +38,7 @@ def check_attached_vif_status(vifs):
       vif_state = vif.state
       
       if vif_state == "AVAILABLE":
-        Print("VIF of id:{} is available!".format(vif_id))
+        print("VIF of id:{} is available!".format(vif_id))
         return
       else:
         #sleep 10 secs
@@ -61,7 +61,7 @@ def check_attached_vif_bgp_status(vifs):
       vif_bgp_state = vif.bgp_status
       
       if vif_bgp_state == "UP":
-        Print("VIF of id:{} BGP status is UP!".format(vif_id))
+        print("VIF of id:{} BGP status is UP!".format(vif_id))
         return
       else:
         #sleep 10 secs
