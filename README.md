@@ -24,7 +24,7 @@ If you want to know detail of "VMware vSphere Automation SDK for Python", please
 # python vmcjp/create_sddc.py
 ```
 ## Reference
-- VMware vSphere Automation SDK for Python
+- VMware vSphere Automation SDK for Python  
   https://github.com/vmware/vsphere-automation-sdk-python
 - VMC API Docs  
   com.vmware.nsx_vmc_app.infra.direct_connect_client.Vifs  
