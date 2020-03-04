@@ -5,7 +5,7 @@ Current sample is as followings,
 - create SDDC on VMC
 - add hosts to SDDC
 - get Edge firewall rules
-- attach AWS Direct Connect Private VIFs to SDDC
+- attach AWS Direct Connect Private VIFs to SDDC  
 This sample is using "VMware vSphere Automation SDK for Python" library.
 If you want to know detail of "VMware vSphere Automation SDK for Python", please see section of Reference below.
 ## How to use
