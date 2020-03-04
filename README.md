@@ -1,6 +1,6 @@
 # vmc-sample
 ## Abstract
-This is sample of how to implement python scripts to manage VMware Cloud on AWS.  
+This is sample of how to implement python scripts to manage and automate VMware Cloud on AWS.  
 Current sample is as followings,
 - create SDDC on VMC
 - add hosts to SDDC
