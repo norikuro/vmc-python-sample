@@ -42,7 +42,7 @@ def check_attached_vif_status(vifs):
         return
       else:
         #sleep 10 secs
-        sleep(10)
+        time.sleep(10)
         elapsed_time = time.time() - start
         if elapsed_time >= wait_time:
           print("Timed out for waiting VIF of id:{} is available".format(vif_id))
@@ -65,7 +65,7 @@ def check_attached_vif_bgp_status(vifs):
         return
       else:
         #sleep 10 secs
-        sleep(10)
+        time.sleep(10)
         elapsed_time = time.time() - start
         if elapsed_time >= wait_time:
           print("Timed out for waiting VIF of id:{} BGP is up".format(vif_id))
