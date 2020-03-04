@@ -26,7 +26,7 @@ def attach_vifs(vifs):
     except Exception as e:
       print("Failed to attach VIF, {}".format(e.message))
 
-def check_attached_vif_status(vifs):
+def check_vif_status(vifs):
   #wait 3 minuites until attached VIF status will be available.
   wait_time = 3 * 60 
   start = time.time()
@@ -39,7 +39,7 @@ def check_attached_vif_status(vifs):
       
       if vif_state == "AVAILABLE":
         print("VIF of id:{} is available!".format(vif_id))
-        return
+        break
       else:
         #sleep 10 secs
         time.sleep(10)
@@ -47,11 +47,10 @@ def check_attached_vif_status(vifs):
         if elapsed_time >= wait_time:
           print("Timed out for waiting VIF of id:{} is available".format(vif_id))
           print("Please see VMC console if VIF is up later.")
-          return
 
-def check_attached_vif_bgp_status(vifs):
-  #wait 3 minuites until attached VIF status will be available.
-  wait_time = 3 * 60   
+def check_bgp_status(vifs):
+  #wait 10 minuites until attached VIF BGP status will be up.
+  wait_time = 10 * 60   
   start = time.time()
   elapsed_time = 0
   
@@ -62,7 +61,7 @@ def check_attached_vif_bgp_status(vifs):
       
       if vif_bgp_state == "UP":
         print("VIF of id:{} BGP status is UP!".format(vif_id))
-        return
+        break
       else:
         #sleep 10 secs
         time.sleep(10)
@@ -70,7 +69,6 @@ def check_attached_vif_bgp_status(vifs):
         if elapsed_time >= wait_time:
           print("Timed out for waiting VIF of id:{} BGP is up".format(vif_id))
           print("Please see VMC console if VIF BGP is up later.")
-          return
 
 def main():
   token = "VMC_Refresh_Token_xxxxxxx"
@@ -88,8 +86,8 @@ def main():
   
   if num_vfs > 0:
     attach_vifs(vifs)
-    check_attached_vif_status(vifs)
-    check_attached_vif_bgp_status(vifs)
+    check_vif_status(vifs)
+    check_bgp_status(vifs)
   else:
     print("There is no VIF to attach to this SDDC!")
   
