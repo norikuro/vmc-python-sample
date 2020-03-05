@@ -1,4 +1,4 @@
-# vmc-sample
+# vmc-python-sample
 ## Abstract
 This is sample of how to implement python scripts to manage and automate VMware Cloud on AWS.  
 Current sample is as followings,
