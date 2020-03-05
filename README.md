@@ -11,6 +11,9 @@ This sample is using "VMware vSphere Automation SDK for Python" library.
 If you want to know detail of "VMware vSphere Automation SDK for Python", please see section of Reference below.
 ## How to use
 ### clone this git to your desktop
+I'm testing these scrips on AWS EC2 (aws linux).  
+And I can run fine these scripts with associated python libraries on aws linux.  
+If you run other kind of environment, you might need some python libraries to run scripts successfully.
 ```cmd
 # git clone https://github.com/norikuro/vmc-sample
 ```
